@@ -1,4 +1,4 @@
-# Force Dark/Light Mode Browser Extension
+# [Over Engineered with AI] Force Dark/Light Mode Browser Extension
 
 > **High-performance cross-browser extension allowing users to force dark or light mode on any web page with intelligent media preservation.**
 
