@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://specs.forcedarklight.local/schemas/theme-preference.schema.json",
+  "title": "ThemePreference",
+  "description": "Canonical schema definition for per-domain and global forced theme preferences",
+  "type": "object",
+  "required": ["version", "globalMode", "domainOverrides"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    },
+    "globalMode": {
+      "type": "string",
+      "enum": ["system", "dark", "light", "disabled"],
+      "default": "system"
+    },
+    "domainOverrides": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["mode"],
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": ["dark", "light", "system", "disabled"]
+          },
+          "customCss": {
+            "type": "string"
+          },
+          "invertImages": {
+            "type": "boolean",
+            "default": false
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
